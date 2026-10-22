@@ -6,6 +6,8 @@
 <div align="center">
 
 ### UNIVERSIDAD PRIVADA DE TACNA
+<img src="logo.jpg" alt="Logo de la Universidad" width="250">
+
 **FACULTAD DE INGENIERÍA**  
 **Escuela Profesional de Ingeniería de Sistemas**
 

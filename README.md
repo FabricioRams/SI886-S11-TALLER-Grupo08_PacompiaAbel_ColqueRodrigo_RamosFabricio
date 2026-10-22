@@ -41,12 +41,13 @@ Octubre - Noviembre 2026
 
 <div>
 <p align="center">
-  <img src="https://shields.io" alt="Python">
-  <img src="https://shields.io" alt="PostgreSQL">
-  <img src="https://shields.io" alt="Docker">
-  <img src="https://shields.io" alt="Metabase">
-  <img src="https://shields.io" alt="Git">
+  <img src="https://jsdelivr.net" alt="Python" width="40" height="40"> &nbsp;
+  <img src="https://jsdelivr.net" alt="PostgreSQL" width="40" height="40"> &nbsp;
+  <img src="https://jsdelivr.net" alt="Docker" width="40" height="40"> &nbsp;
+  <img src="https://githubusercontent.com" alt="Metabase" width="40" height="40"> &nbsp;
+  <img src="https://jsdelivr.net" alt="Git" width="40" height="40">
 </p>
+
 </div>
 
 ---

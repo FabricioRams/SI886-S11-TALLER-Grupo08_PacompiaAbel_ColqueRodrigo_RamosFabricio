@@ -34,7 +34,6 @@ Tacna, Perú
 Octubre - Noviembre 2026
 
 </div>
----
 
 <div align="center">
 
@@ -45,6 +44,10 @@ Octubre - Noviembre 2026
 ![Git](https://shields.io)
 
 </div>
+
+
+---
+
 
 
 ## 1. Información General y Objetivos del Taller

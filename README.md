@@ -34,8 +34,18 @@ Tacna, Perú
 Octubre - Noviembre 2026
 
 </div>
-
 ---
+
+<div align="center">
+
+![Python](https://shields.io)
+![PostgreSQL](https://shields.io)
+![Docker](https://shields.io)
+![Metabase](https://shields.io)
+![Git](https://shields.io)
+
+</div>
+
 
 ## 1. Información General y Objetivos del Taller
 

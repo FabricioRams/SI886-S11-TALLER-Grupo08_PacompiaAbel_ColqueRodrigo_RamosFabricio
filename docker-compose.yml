@@ -1,0 +1,65 @@
+version: '3.8'
+
+# SI-886: Planeamiento Estratégico de Tecnologías de Información
+# Taller Semana 11 · Diagnóstico de Gobierno Digital y Tablero de Línea Base
+# Caso de Estudio: EPS AGUAS DEL SUR S.A.
+# Orquestación de infraestructura local: PostgreSQL 16 + Metabase BI
+
+services:
+  # 1. Base de datos relacional para el tablero de línea base
+  peti_db:
+    image: postgres:16
+    container_name: peti_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: peti
+      POSTGRES_PASSWORD: peti_lab
+      POSTGRES_DB: peti
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - peti_net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U peti -d peti"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # 2. Herramienta de Business Intelligence (Metabase)
+  peti_metabase:
+    image: metabase/metabase:latest
+    container_name: peti_metabase
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: peti
+      MB_DB_PORT: 5432
+      MB_DB_USER: peti
+      MB_DB_PASS: peti_lab
+      MB_DB_HOST: peti_db
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      peti_db:
+        condition: service_healthy
+    volumes:
+      - metabase_data:/metabase-data
+    networks:
+      - peti_net
+
+volumes:
+  pgdata:
+    driver: local
+    name: peti_pgdata
+  metabase_data:
+    driver: local
+    name: peti_metabase_data
+
+networks:
+  peti_net:
+    driver: bridge
+    name: peti_network

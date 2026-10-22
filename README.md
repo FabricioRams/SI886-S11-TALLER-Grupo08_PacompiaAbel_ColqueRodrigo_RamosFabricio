@@ -49,6 +49,7 @@ SI886-S11-TALLER-RamosFabricio/
 │   │   └── salida_GD04_madurez.txt           # Evidencia de ejecución de GD04
 │   └── tablero_dashboard_completo.png        # Evidencia de captura del tablero
 ├── 3-TALLER.md                               # Guía oficial del taller y lista de comprobación
+├── docker-compose.yml                        # Orquestación de contenedores (PostgreSQL 16 + Metabase)
 ├── generar_tableros_metabase.py              # Script utilitario para renderizar las vistas del tablero
 ├── README.md                                 # Esta guía de uso de recursos
 └── INFORME_TALLER_S11.md                     # Informe final detallado del proyecto para Google Docs
@@ -105,25 +106,66 @@ python generar_tableros_metabase.py
 ```
 - **Salida esperada:** 6 imágenes de tarjetas (`tablero_01_servicios.png` a `tablero_06_sin_linea_base.png`) y el dashboard consolidado `tablero_dashboard_completo.png` en `graficos/` y `evidencias/S11/`.
 
-### Paso 4: Despliegue del Tablero en Metabase y PostgreSQL con Docker (Opcional)
-Para desplegar la infraestructura de BI localmente:
+### Paso 4: Despliegue del Tablero en Metabase y PostgreSQL con Docker Compose
+
+Para desplegar la infraestructura de BI de manera reproducible y en un solo paso, se provee el archivo `docker-compose.yml` que orquesta PostgreSQL 16 y Metabase en una red privada virtual (`peti_net`) con volúmenes de almacenamiento persistente (`peti_pgdata` y `peti_metabase_data`):
+
+#### 4.1 Iniciar los contenedores:
 ```bash
-# 1. Iniciar contenedor de base de datos PostgreSQL en el puerto 5433
-docker run -d --name peti_db -e POSTGRES_USER=peti -e POSTGRES_PASSWORD=peti_lab \
-  -e POSTGRES_DB=peti -p 127.0.0.1:5433:5432 postgres:16
+# Desde la raíz del repositorio
+docker compose up -d
+```
+* **PostgreSQL (`peti_db`):** Publicado en `127.0.0.1:5433` (mapeado al 5432 interno) con usuario `peti`, base `peti` y contraseña `peti_lab`. Cuenta con healthcheck para asegurar que la base esté lista antes de que Metabase intente conectarse.
+* **Metabase (`peti_metabase`):** Publicado en `http://127.0.0.1:3001` (mapeado al 3000 interno), conectado a la red interna y con resolución de host configurada.
 
-# 2. Iniciar contenedor de Metabase en el puerto 3001
-docker run -d --name peti_metabase -p 127.0.0.1:3001:3000 \
-  --add-host=host.docker.internal:host-gateway \
-  -e MB_DB_TYPE=postgres -e MB_DB_DBNAME=peti -e MB_DB_PORT=5433 \
-  -e MB_DB_USER=peti -e MB_DB_PASS=peti_lab -e MB_DB_HOST=host.docker.internal \
-  metabase/metabase
+#### 4.2 Verificar el estado de los servicios:
+```bash
+docker compose ps
+# Para ver los logs en tiempo real:
+docker compose logs -f
+```
 
-# 3. Cargar las tablas relacionales desde Python
+#### 4.3 Cargar las tablas de datos desde Python a PostgreSQL:
+Una vez que los contenedores estén activos:
+```bash
 cd 06_gobierno_digital
 python GD05_carga_tablero.py
 ```
-- Ingrese en el navegador a: `http://127.0.0.1:3001` y configure la conexión a PostgreSQL con el host `host.docker.internal`, puerto `5433`, base `peti`, usuario `peti`, contraseña `peti_lab`.
+El script leerá `GD01_catalogo_servicios.csv`, `GD03_ejes.csv`, `NO03_matriz_cumplimiento.csv` y `MG03_capacidad.csv`, poblando automáticamente las tablas `servicios`, `ejes_gd`, `cumplimiento` y `capacidad` en PostgreSQL.
+
+#### 4.4 Configuración inicial en Metabase:
+1. Abra su navegador en `http://127.0.0.1:3001`.
+2. Complete el asistente de bienvenida (cree la cuenta de administrador local).
+3. En **Admin → Databases → Add Database**:
+   - **Database type:** PostgreSQL
+   - **Host:** `peti_db` (o `host.docker.internal`)
+   - **Port:** `5432` (si usa `peti_db`) o `5433` (si usa `host.docker.internal`)
+   - **Database name:** `peti`
+   - **Database username:** `peti`
+   - **Database password:** `peti_lab`
+4. Cree las 6 visualizaciones mínimas requeridas.
+
+#### 4.5 Detener o reiniciar la infraestructura:
+```bash
+# Para detener los contenedores preservando los datos:
+docker compose down
+
+# Para reiniciar limpiando los volúmenes (si se desea empezar de cero):
+docker compose down -v
+```
+
+> **Alternativa sin Compose (comandos individuales de `docker run`):**
+> Si prefiere ejecutar los contenedores por separado:
+> ```bash
+> docker run -d --name peti_db -e POSTGRES_USER=peti -e POSTGRES_PASSWORD=peti_lab \
+>   -e POSTGRES_DB=peti -p 127.0.0.1:5433:5432 -v peti_pgdata:/var/lib/postgresql/data postgres:16
+>
+> docker run -d --name peti_metabase -p 127.0.0.1:3001:3000 \
+>   --add-host=host.docker.internal:host-gateway \
+>   -e MB_DB_TYPE=postgres -e MB_DB_DBNAME=peti -e MB_DB_PORT=5433 \
+>   -e MB_DB_USER=peti -e MB_DB_PASS=peti_lab -e MB_DB_HOST=host.docker.internal \
+>   metabase/metabase
+> ```
 
 ---
 

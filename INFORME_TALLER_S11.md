@@ -25,6 +25,7 @@ EMPRESA 08 — **EPS AGUAS DEL SUR S.A.**
 **INTEGRANTE / EQUIPO DE TRABAJO:**  
 - **Ramos Fabricio** · Código Estudiantil: 2021070000
 - **Pacompía Abel** · Código Estudiantil: 2023076797
+- **Colque Rodrigo** · Código Estudiantil: 2023077078
 
 **ENLACE AL REPOSITORIO DE GITHUB:**  
 [https://github.com/FabricioRams/SI886-S11-TALLER-RamosFabricio](https://github.com/FabricioRams/SI886-S11-TALLER-RamosFabricio)

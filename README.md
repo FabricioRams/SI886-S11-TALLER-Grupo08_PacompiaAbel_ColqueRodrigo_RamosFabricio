@@ -37,6 +37,7 @@ Octubre - Noviembre 2026
 
 ---
 
+<div align="center">
 <p align="center">
   <img src="https://shields.io" alt="Python">
   <img src="https://shields.io" alt="PostgreSQL">
@@ -44,7 +45,7 @@ Octubre - Noviembre 2026
   <img src="https://shields.io" alt="Metabase">
   <img src="https://shields.io" alt="Git">
 </p>
----
+</div>
 
 
 

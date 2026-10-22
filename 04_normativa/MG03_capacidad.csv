@@ -1,0 +1,8 @@
+id_proceso,Proceso,Sistema_Soporte,Capacidad_Actual,Capacidad_Objetivo,Brecha,Prioridad_Esfuerzo
+PR-01,Catastro comercial de usuarios,Sistema comercial,2,4,2,Media
+PR-02,Lectura de medidores y facturación,Micromedición y lectura,1,4,3,Crítica
+PR-03,Cobranza y corte/reconexión,Sistema comercial,2,4,2,Alta
+PR-04,Atención de reclamos comerciales,Atención de reclamos (web y hojas),1,4,3,Crítica
+PR-05,Operación de plantas y redes,SCADA de plantas y reservorios,2,4,2,Alta
+PR-06,Contrataciones y presupuesto,SIAF y patrimonio (MEF),2,3,1,Baja
+PR-07,Mesa de servicio y gestión de TI,Hoja de cálculo manual,1,4,3,Crítica

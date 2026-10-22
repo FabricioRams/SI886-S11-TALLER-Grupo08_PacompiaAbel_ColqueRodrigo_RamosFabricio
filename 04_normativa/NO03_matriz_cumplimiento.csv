@@ -1,0 +1,9 @@
+id_norma,Norma,Entidad_Emisora,Materia,Estado_Cumplimiento,Observacion_Diagnostico
+NOR-01,D. Leg. 1412 - Ley de Gobierno Digital,PCM - SEGDI,Gobernanza Digital,Incumplido,No se ha formulado ni aprobado el Plan de Gobierno Digital (PGD) exigido
+NOR-02,R.M. 119-2018-PCM,PCM,Liderazgo Digital,Incumplido,No existe resolución de designación del Comité ni del Líder de Gobierno Digital
+NOR-03,D.S. 029-2021-PCM - Reglamento LGD,PCM - SGTD,Servicios Digitales,Parcial,Inventario de servicios parcial y sin oficial ni responsable asignado
+NOR-04,Ley 29733 - Protección de Datos Personales,MINJUS - ANPD,Seguridad y Privacidad,Parcial,Tratamiento de datos personales en sistema comercial sin banco inscrito ante ANPD
+NOR-05,D.S. 085-2023-PCM - PNTD al 2030,PCM - Presidencia,Transformación Digital,Incumplido,Sin alineamiento estratégico institucional ni proyectos hacia el 2030
+NOR-06,Reglamento de Calidad de la Prestación de Servicios,SUNASS,Regulación Comercial,Incumplido,Procedimiento administrativo sancionador abierto por 11 200 facturaciones estimadas
+NOR-07,D.L. 1246 - Simplificación Administrativa,PCM,Interoperabilidad y PIDE,Incumplido,Se solicitan copias de DNI y SUNARP ya en poder del Estado (55% redundancia)
+NOR-08,D.U. 007-2020 - Confianza Digital (SGSI),PCM - CNC,Seguridad Digital,Incumplido,Inexistencia de Política de Seguridad de la Información y SGSI

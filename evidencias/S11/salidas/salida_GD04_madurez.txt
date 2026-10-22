@@ -1,0 +1,23 @@
+﻿================================================================
+  EPS AGUAS DEL SUR S.A. - NIVEL DE MADUREZ POR EJE DE GOBIERNO DIGITAL
+================================================================
+Eje 1. Gobernanza               : 1.00 de 5
+Eje 2. Servicios                : 1.50 de 5
+Eje 3. Interoperabilidad        : 1.00 de 5
+Eje 4. Seguridad digital        : 1.00 de 5
+Eje 5. Datos                    : 1.00 de 5
+Eje 6. Identidad digital        : 1.00 de 5
+Eje 7. Talento                  : 1.00 de 5
+Eje 8. Infraestructura          : 1.50 de 5
+
+NIVEL DE MADUREZ DE GOBIERNO DIGITAL : 1.12 de 5
+-> Estado institucional : Nivel 1 (Inicial ÔÇö reactivo)
+
+=== INDICADORES SIN L├ìNEA BASE: 3 de 18 ===
+- [2. Servicios] % de transacciones completadas por canal 100% digital
+- [5. Datos] % de decisiones comerciales u operativas con datos verificables
+- [8. Infraestructura] Disponibilidad medida de servicios cr├¡ticos y enlaces de red
+-> Cada uno genera un proyecto de instrumentaci├│n: no se puede fijar meta
+  sobre lo que no se mide.
+
+[OK] Gr├ífico de radar guardado exitosamente en: ../graficos/GD_madurez.png

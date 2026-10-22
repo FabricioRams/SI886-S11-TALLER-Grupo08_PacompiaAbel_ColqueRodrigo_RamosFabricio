@@ -1,0 +1,24 @@
+﻿Servicios catalogados        : 9
+Volumen anual total          : 1,104,850 atenciones
+Nivel medio de digitalizaci├│n: 0.89 de 5
+Servicios en nivel >= 4      : 0 (0%)
+Servicios en nivel 0 o 1     : 8
+
+Nivel medio PONDERADO por volumen: 1.93
+-> El promedio simple sobrevalora la digitalizaci├│n si los servicios de mayor
+  volumen son los menos digitalizados. Este es el indicador que importa.
+
+=== PRINCIPIO DE UNA SOLA VEZ ===
+Documentos solicitados: 22 | de ellos ya en poder de la organizaci├│n: 12 (55%)
+-> Cada documento redundante es una solicitud que el redise├▒o debe eliminar.
+
+=== BRECHA POR SERVICIO, PONDERADA POR VOLUMEN ===
+  id                                              Servicio  nivel  Nivel objetivo  Volumen anual  impacto
+S-01    Pago y consulta de recibo de agua y alcantarillado      2               4        1032000  2064000
+S-04   Reporte de aver├¡as aniegos y emergencias operativas      1               4          18500    55500
+S-06 Solicitud de reconexi├│n de servicio cortado por deuda      1               4          16200    48600
+S-02          Reclamo comercial por facturaci├│n o medici├│n      1               4          14200    42600
+S-08     Emisi├│n de constancia de no adeudo de saneamiento      1               4           8900    26700
+-> Estos servicios encabezan el portafolio: mayor brecha x mayor volumen.
+
+[OK] Grafico guardado en ../graficos/GD_servicios.png

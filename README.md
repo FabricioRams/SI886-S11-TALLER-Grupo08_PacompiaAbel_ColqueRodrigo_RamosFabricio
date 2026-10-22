@@ -48,6 +48,7 @@ Octubre - Noviembre 2026
 
 
 
+
 ## 1. Información General y Objetivos del Taller
 
 ### 1.1 Objetivos de la Práctica

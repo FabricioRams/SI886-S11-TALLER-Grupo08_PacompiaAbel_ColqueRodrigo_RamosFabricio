@@ -31,7 +31,7 @@ EMPRESA 08 — **EPS AGUAS DEL SUR S.A.**
 [https://github.com/FabricioRams/SI886-S11-TALLER-RamosFabricio](https://github.com/FabricioRams/SI886-S11-TALLER-RamosFabricio)
 
 Tacna, Perú  
-Mayo – Junio 2026
+Octubre - Noviembre 2026
 
 </div>
 
@@ -57,6 +57,22 @@ Mayo – Junio 2026
 ### 1.3 Seguridad y Confidencialidad
 - Los datos de las 86 000 conexiones y la facturación de S/ 74.1 millones son tratados con reserva conforme a la Ley N.° 29733 (Protección de Datos Personales).
 - El tablero analítico se configuró en entorno local seguro (`127.0.0.1`), empleando métricas agregadas sin exponer datos nominativos de usuarios ni credenciales operativas.
+
+### 1.4 Instrucciones para la Reproducción del Entorno
+Para levantar la base de datos relacional y verificar la ejecución de los análisis estadísticos, ejecute los siguientes comandos en la terminal:
+
+```bash
+# 1. Levantar la base de datos y Metabase en segundo plano
+docker-compose up -d
+
+# 2. Instalar las dependencias de Python necesarias
+pip install pandas matplotlib numpy psycopg2-binary
+
+# 3. Ejecutar los scripts de análisis y carga en orden
+python 06_gobierno_digital/GD02_analisis_servicios.py
+python 06_gobierno_digital/GD04_madurez.py
+python 06_gobierno_digital/GD05_carga_tablero.py
+```
 
 ---
 

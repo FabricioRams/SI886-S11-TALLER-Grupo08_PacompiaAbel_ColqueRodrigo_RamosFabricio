@@ -35,18 +35,16 @@ Octubre - Noviembre 2026
 
 </div>
 
-<div align="center">
-
-![Python](https://shields.io)
-![PostgreSQL](https://shields.io)
-![Docker](https://shields.io)
-![Metabase](https://shields.io)
-![Git](https://shields.io)
-
-</div>
-
-
 ---
+
+<p align="center">
+  <img src="https://shields.io" alt="Python">
+  <img src="https://shields.io" alt="PostgreSQL">
+  <img src="https://shields.io" alt="Docker">
+  <img src="https://shields.io" alt="Metabase">
+  <img src="https://shields.io" alt="Git">
+</p>
+
 
 
 

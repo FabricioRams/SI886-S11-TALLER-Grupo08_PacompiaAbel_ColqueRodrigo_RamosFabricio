@@ -44,7 +44,7 @@ Octubre - Noviembre 2026
   <img src="https://shields.io" alt="Metabase">
   <img src="https://shields.io" alt="Git">
 </p>
-
+---
 
 
 
